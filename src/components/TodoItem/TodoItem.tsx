@@ -11,6 +11,7 @@ interface TodoItemProps {
 }
 
 export function TodoItem({ todoes, setTodoes }: TodoItemProps) {
+
   function changeTodoStatus(id: string) {
     setTodoes((prev) => {
       return prev.map((todo) => {
@@ -23,6 +24,14 @@ export function TodoItem({ todoes, setTodoes }: TodoItemProps) {
         return todo;
       });
     });
+  }
+
+  function deleteTodo(id: string){
+    const itemToDelete = todoes.filter(todo=>{
+      return id!==todo.id
+    })
+
+    setTodoes(itemToDelete)
   }
 
   return (
@@ -45,7 +54,7 @@ export function TodoItem({ todoes, setTodoes }: TodoItemProps) {
                 <p className={`${todoItem.isComplete === true ? "todo-underline" : "todo"}`}>{todoItem.name}</p>
               </div>
 
-              <TrashCan className="trashcan" />
+              <TrashCan className="trashcan" onClick={()=>deleteTodo(todoItem.id)}/>
             </div>
           );
         })}
