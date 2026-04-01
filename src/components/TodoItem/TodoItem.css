@@ -1,0 +1,81 @@
+.no-todo-yet-container {
+  padding: 30px 0px;
+}
+
+.no-todo-yet {
+  color: rgb(107, 114, 128);
+  text-align: center;
+}
+
+.todo-container {
+  background-color: lightgray;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* check */
+.square-check {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+  color: gray;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+
+.square {
+  fill: none;
+}
+
+.checkmark {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.square-check:hover {
+  color: #00c950;
+}
+
+.left-side{
+  display: flex;
+  align-items: center;
+}
+
+.todo-underline{
+  text-decoration:line-through;
+  color: gray;
+}
+
+/* trashcan */
+
+.trashcan{
+    width: 25px;
+    height: 25px;
+    stroke: red;
+    cursor: pointer;
+    transition: stroke 0.5s;
+}
+
+.trashcan:hover{
+    stroke: rgb(153, 2, 2);
+}
+
+/* show check mark */
+
+.activate-square-check {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+  color: #00c950;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+
+.activate-square-check .checkmark {
+  opacity: 1;  /* checkmark stays visible */
+}
